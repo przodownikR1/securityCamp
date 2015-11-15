@@ -1,0 +1,14 @@
+<c:forEach items="${sessions}" var="session">
+<tr>
+<fmt:formatDate value="${session.lastRequest}" type="both"
+pattern="yyyy-MM-dd HH:mm" var="lastUsed"/>
+<td><c:out value="${lastUsed}"/></td>
+<td><c:out value="${session.sessionId}" /></td>
+<c:url var="deleteUrl" value="./${session.sessionId}"/>
+<td>
+<form action="${deleteUrl}" ...>
+...
+</form>
+</td>
+</tr>
+</c:forEach>

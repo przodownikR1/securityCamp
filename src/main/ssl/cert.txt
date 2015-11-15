@@ -1,0 +1,56 @@
+przodownik ~/b/s/s/m/ssl (tomcatSSL|●4✚4…5)$  keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650                                                 17:47
+Enter keystore password:  
+Re-enter new password: 
+What is your first and last name?
+  [Unknown]:  Borowiec
+What is the name of your organizational unit?
+  [Unknown]:  scalatech
+What is the name of your organization?
+  [Unknown]:  scalatech
+What is the name of your City or Locality?
+  [Unknown]:  Warsaq
+What is the name of your State or Province?
+  [Unknown]:  mazowieckie
+What is the two-letter country code for this unit?
+  [Unknown]:  PL
+Is CN=Borowiec, OU=scalatech, O=scalatech, L=Warsaq, ST=mazowieckie, C=PL correct?
+  [no]:  yes
+
+przodownik ~/b/s/s/m/ssl (tomcatSSL|●4✚4…1)$ keytool -list -v -keystore keystore.p12 -storetype pkcs12                                                                                                        17:49
+Enter keystore password:  
+
+Keystore type: PKCS12
+Keystore provider: SunJSSE
+
+Your keystore contains 1 entry
+
+Alias name: tomcat
+Creation date: 2015-11-15
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Borowiec, OU=scalatech, O=scalatech, L=Warsaq, ST=mazowieckie, C=PL
+Issuer: CN=Borowiec, OU=scalatech, O=scalatech, L=Warsaq, ST=mazowieckie, C=PL
+Serial number: 508ca3d7
+Valid from: Sun Nov 15 17:49:50 CET 2015 until: Wed Nov 12 17:49:50 CET 2025
+Certificate fingerprints:
+     MD5:  60:D2:6A:E2:AE:2B:25:FA:42:AB:6A:E4:96:A9:3A:26
+     SHA1: 56:74:55:F2:42:83:D3:0D:44:FE:72:58:B8:07:7E:E6:B5:88:AF:14
+     SHA256: 5C:EE:4F:EE:08:A0:CC:F2:21:6E:1D:4E:86:8B:77:BD:31:B9:88:E3:43:65:6A:AF:1C:28:5C:FA:A7:17:4C:6E
+     Signature algorithm name: SHA256withRSA
+     Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 12 3B 42 E8 F7 AB 01 F2   58 C3 4F D4 0D 5E 58 05  .;B.....X.O..^X.
+0010: 6C C2 99 A1                                        l...
+]
+]
+
+
+
+*******************************************
+*******************************************
