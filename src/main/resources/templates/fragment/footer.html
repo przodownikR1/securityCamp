@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org" th:lang="${#locale.language}">
+	
+<head th:include="fragment/headTag :: headTag">
+    <title>demonstration application</title>
+		<title th:text="${title}">(title)</title>
+	
+</head>
+
+<body th:fragment="footer">
+	<div id="footer">
+		<div class="navbar navbar-inner  navbar-fixed-bottom">
+			<p class="muted credit"><center><span class="glyphicon glyphicon-copyright-mark"></span>  Copyright (C) 2012-2015 Scalatech </center></p>
+       </div>
+ </div>
+
+			
+</body>
+
+</html>
+
+
+
+
+

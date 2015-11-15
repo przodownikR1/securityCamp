@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:tiles="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org" th:lang="${#locale.language}">
+
+<head th:fragment="headTag">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <title>thymeleaf poc's</title>
+   
+        <link th:href="@{/favicon.ico}" rel='icon' type='image/x-icon'/>
+ 
+		<title th:text="${title}">(title)</title>
+		
+		<link rel="shortcut icon" th:href="@{/favicon.ico}" href="../../resources/images/favicon.ico" />
+		<link th:href="@{/assets/bootstrap/3.3.5/css/bootstrap.css}" rel="stylesheet"/>
+        <link th:href="@{/assets/bootstrap/3.3.5/css/bootstrap.min.css}" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" /> 
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js" th:src="@{/assets/bootstrap/3.3.5/webjars-requirejs.js}" type="text/javascript"/>
+        <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js" th:src="@{/assets/jquery/2.1.4/jquery.min.js}" type="text/javascript"/>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" th:src="@{/assets/bootstrap/3.3.5/js/bootstrap.min.js}" type="text/javascript"/> 
+</head>
+</html>
