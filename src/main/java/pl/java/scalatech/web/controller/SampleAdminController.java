@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/sampleAdmin")
 @Slf4j
 public class SampleAdminController {
-
+    @RequestMapping("/")
     public String hello() {
         return "sampleAdmin";
     }

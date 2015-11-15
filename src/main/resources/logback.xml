@@ -18,6 +18,11 @@
 	</appender>
 	
 	<logger name="org.springframework.aop.interceptor" level="trace" />
+	<logger name="org.springframework" level="info" />
+	<logger name="org.springframework.security" level="info" />
+    <logger name="org.hibernate.sql" level="info" />
+    <logger name="org.hibernate" level="info" />
+	
     <logger name="pl.java.scalatech" level="trace" />
     <logger name="pl.java.scalatech.trace" level="trace"/>
 
