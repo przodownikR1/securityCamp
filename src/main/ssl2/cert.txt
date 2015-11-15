@@ -1,0 +1,73 @@
+przodownik ~/b/s/s/main (tomcatSSL|)$ openssl genrsa -out private.key 1024                                                                                                                                   18:40
+Generating RSA private key, 1024 bit long modulus
+........++++++
+.................++++++
+e is 65537 (0x10001)
+przodownik ~/b/s/s/main (tomcatSSL|…1)$ openssl req -new -x509 -days 365 -key private.key -out certificate.crt                                                                                               18:40
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:PL
+State or Province Name (full name) [Some-State]:mazowieckie
+Locality Name (eg, city) []:Warsaw
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:scalatech
+Organizational Unit Name (eg, section) []:scalatech
+Common Name (e.g. server FQDN or YOUR name) []:localhost
+Email Address []:przodownikR1@gmail.com
+przodownik ~/b/s/s/main (tomcatSSL|…2)$ keytool -importcert -alias tomcat -keystore tomcat-ssl.truststore -file certificate.crt                                                                              18:41
+Enter keystore password:  
+Re-enter new password: 
+Owner: EMAILADDRESS=przodownikR1@gmail.com, CN=localhost, OU=scalatech, O=scalatech, L=Warsaw, ST=mazowieckie, C=PL
+Issuer: EMAILADDRESS=przodownikR1@gmail.com, CN=localhost, OU=scalatech, O=scalatech, L=Warsaw, ST=mazowieckie, C=PL
+Serial number: 9e6659ee04c11704
+Valid from: Sun Nov 15 18:41:39 CET 2015 until: Mon Nov 14 18:41:39 CET 2016
+Certificate fingerprints:
+     MD5:  E9:7B:82:10:AA:56:21:04:BD:64:F7:BF:CC:61:D5:7B
+     SHA1: 97:47:A6:26:9A:6E:4F:C4:E9:66:06:25:C6:E7:A2:9D:31:F9:7F:78
+     SHA256: E0:3F:52:16:2D:CF:8D:F8:72:93:65:44:87:78:E0:25:F4:DF:E1:86:BE:02:7E:A1:EE:E8:09:D2:43:CF:73:E9
+     Signature algorithm name: SHA256withRSA
+     Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.35 Criticality=false
+AuthorityKeyIdentifier [
+KeyIdentifier [
+0000: A0 AB B0 8F D7 89 9F 8C   F7 EF AC 06 A3 E1 7D 5C  ...............\
+0010: D8 89 D1 21                                        ...!
+]
+]
+
+#2: ObjectId: 2.5.29.19 Criticality=false
+BasicConstraints:[
+  CA:true
+  PathLen:2147483647
+]
+
+#3: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: A0 AB B0 8F D7 89 9F 8C   F7 EF AC 06 A3 E1 7D 5C  ...............\
+0010: D8 89 D1 21                                        ...!
+]
+]
+
+Trust this certificate? [no]:  yes
+Certificate was added to keystore
+przodownik ~/b/s/s/main (tomcatSSL|…3)$ ls                                                                                                                                                                   18:42
+certificate.crt  java/  private.key  resources/  ssl/  ssl2/  tomcat-ssl.truststore
+przodownik ~/b/s/s/main (tomcatSSL|…3)$ ls                                                                                                                                                                   18:42
+certificate.crt  java/  private.key  resources/  ssl/  ssl2/  tomcat-ssl.truststore
+przodownik ~/b/s/s/main (tomcatSSL|…3)$ cd ssl2/                                                                                                                                                             18:42
+przodownik ~/b/s/s/m/ssl2 (tomcatSSL|)$ ls                                                                                                                                                                   18:42
+przodownik ~/b/s/s/m/ssl2 (tomcatSSL|)$ cd ..                                                                                                                                                                18:42
+przodownik ~/b/s/s/main (tomcatSSL|…3)$ ls                                                                                                                                                                   18:42
+certificate.crt  java/  private.key  resources/  ssl/  ssl2/  tomcat-ssl.truststore
+przodownik ~/b/s/s/main (tomcatSSL|…3)$ openssl pkcs12 -export -in certificate.crt -inkey private.key > client.p12                                                                                           18:42
+Enter Export Password:
+Verifying - Enter Export Password:
+przodownik ~/b/s/s/main (tomcatSSL|…4)$ mc    
