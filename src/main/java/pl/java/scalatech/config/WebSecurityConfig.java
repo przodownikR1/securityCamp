@@ -40,6 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
           .antMatchers("/sampleAdmin/**").hasAuthority("ADMIN")
           .antMatchers("/sampleUser").hasAuthority("USER")
           .antMatchers("/logout").authenticated()
+          .antMatchers("/console/**").hasAuthority("ADMIN")
           .antMatchers("/api/business**").access("hasRole('ROLE_ADMIN') and hasRole('ROLE_BUSINESS')")
           .anyRequest().authenticated();
 
@@ -57,6 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
          .and();
 
 
+         http.headers().frameOptions().disable();
 
 
 
