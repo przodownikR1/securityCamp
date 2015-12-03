@@ -34,6 +34,7 @@ public class User  extends PKEntity<Long>{
     private BigDecimal salary;
     private String firstName;
     private String lastName;
+    private boolean enable;
 
     @ManyToMany(fetch = LAZY, cascade = { PERSIST, MERGE })
     @JoinTable(name = "USER_ROLE", joinColumns = { @JoinColumn(name = "userId") }, inverseJoinColumns = { @JoinColumn(name = "roleId") })
