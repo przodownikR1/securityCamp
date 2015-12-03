@@ -5,42 +5,51 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+
 public class UserSec implements UserDetails{
+
+    private static final long serialVersionUID = 1L;
+    private UserDetails userDetails;
+
+    public UserSec() {
+    }
+
+    public UserSec(UserDetails userDetails) {
+        this.userDetails = userDetails;
+    }
+
+    void setUserDetails(UserDetails userDetails) {
+        this.userDetails = userDetails;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO Auto-generated method stub
-        return null;
+        return userDetails.getAuthorities();
     }
 
     @Override
     public String getPassword() {
-        // TODO Auto-generated method stub
-        return null;
+        return userDetails.getPassword();
     }
 
     @Override
     public String getUsername() {
-        // TODO Auto-generated method stub
-        return null;
+        return userDetails.getUsername();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        // TODO Auto-generated method stub
-        return false;
+        return userDetails.isAccountNonExpired();
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        // TODO Auto-generated method stub
-        return false;
+        return userDetails.isAccountNonLocked();
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        // TODO Auto-generated method stub
-        return false;
+        return userDetails.isCredentialsNonExpired();
     }
 
     @Override
